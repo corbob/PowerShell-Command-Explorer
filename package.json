@@ -1,6 +1,6 @@
 {
     "name": "powershell-function-explorer",
-    "displayName": "PowerShell-Function-Explorer",
+    "displayName": "PowerShell Function Explorer",
     "description": "Function Explorer for PowerShell",
     "version": "0.0.1",
     "publisher": "CorBob",
@@ -11,16 +11,27 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onLanguage:powershell"
     ],
     "main": "./out/extension",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ]
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "function-explorer",
+                    "title": "Function Explorer",
+                    "icon": "media/dep.svg"
+                }
+            ]
+        },
+        "views": {
+            "function-explorer": [
+                {
+                    "id": "functions",
+                    "name": "PowerShell Functions"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
