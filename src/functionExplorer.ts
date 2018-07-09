@@ -18,7 +18,7 @@ export class FunctionsExplorerProvider implements vscode.TreeDataProvider<Comman
     }
 
     getChildren(element?: Command): Thenable<Command[]> {
-        return Promise.resolve(this.getCommandsFromJson(););
+        return Promise.resolve(this.getCommandsFromJson());
     }
 
     

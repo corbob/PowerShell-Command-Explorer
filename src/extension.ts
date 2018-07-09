@@ -10,5 +10,8 @@ export function activate(context: vscode.ExtensionContext) {
     console.log("ERMAHGERD: We loaded!");
     const functionsProvider = new FunctionsExplorerProvider();
     vscode.window.registerTreeDataProvider('functions', functionsProvider);
+    vscode.commands.registerCommand(
+        "PowerShell.refreshCommandsExplorer",
+        () => functionsProvider.refresh());
     vscode.commands.registerCommand('getCommandsFromJson', () => functionsProvider.getCommandsFromJson());
 }

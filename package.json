@@ -15,20 +15,30 @@
     ],
     "main": "./out/extension",
     "contributes": {
-        "viewsContainers": {
-            "activitybar": [
-                {
-                    "id": "function-explorer",
-                    "title": "Function Explorer",
-                    "icon": "media/dep.svg"
-                }
-            ]
-        },
         "views": {
             "function-explorer": [
                 {
                     "id": "functions",
                     "name": "PowerShell Functions"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "PowerShell.refreshCommandsExplorer",
+                "title": "Refresh",
+                "icon": {
+                    "light": "resources/light/refresh.svg",
+                    "dark": "resources/dark/refresh.svg"
+                }
+            }
+        ],
+        "menus": {
+            "view/title": [
+                {
+                    "command": "PowerShell.refreshCommandsExplorer",
+                    "when": "view == functions",
+                    "group": "navigation"
                 }
             ]
         }
